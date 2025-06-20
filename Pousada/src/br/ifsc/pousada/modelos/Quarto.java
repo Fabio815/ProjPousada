@@ -2,7 +2,7 @@ package br.ifsc.pousada.modelos;
 
 public class Quarto {
 	public enum Tipo {
-		SOLTEIRO, CASADO
+		SIMPLES, DUPLO
 	};
 	private Boolean status;
 	private Tipo tipo;
