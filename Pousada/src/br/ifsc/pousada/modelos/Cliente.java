@@ -1,13 +1,24 @@
 package br.ifsc.pousada.modelos;
 
-public class Cliente extends Pessoa {
-	private String cliente;
+import java.time.LocalDate;
 
-	public String getCliente() {
-		return cliente;
+public class Cliente extends Pessoa {
+	private String email;
+	
+	public Cliente(String nome, LocalDate dtNascimento, String telefone, String cpf, String email) {
+		super(nome, dtNascimento, telefone, cpf);
+		this.email = email;
+	}
+	
+	public Cliente() {
+		
 	}
 
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
