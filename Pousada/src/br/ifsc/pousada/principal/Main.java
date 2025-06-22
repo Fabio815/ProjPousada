@@ -21,6 +21,7 @@ public class Main {
 				[3] Listar clientes hospedado
 				[4] Listar quartos disponiveis
 				[5] Fazer reserva
+				[6] Listar reservas
 				""").append("\n");
 		buf.append("Opção: ");
 		System.err.print(buf.toString());

@@ -4,7 +4,7 @@ public class Quarto {
 	public enum Tipo {
 		SIMPLES, DUPLO
 	};
-	private Boolean status;
+	private Boolean status; //TODO true = disponivel / false = indisponivel
 	private Tipo tipo;
 	private Integer numero;
 	private Double preco;

@@ -1,0 +1,32 @@
+[
+  {
+    "numero": 101,
+    "tipo": "SIMPLES",
+    "status": true,
+    "preco": 150.0
+  },
+  {
+    "numero": 102,
+    "tipo": "DUPLO",
+    "status": false,
+    "preco": 250.0
+  },
+  {
+    "numero": 103,
+    "tipo": "SIMPLES",
+    "status": true,
+    "preco": 160.0
+  },
+  {
+    "numero": 104,
+    "tipo": "DUPLO",
+    "status": true,
+    "preco": 260.0
+  },
+  {
+    "numero": 105,
+    "tipo": "SIMPLES",
+    "status": false,
+    "preco": 155.0
+  }
+]

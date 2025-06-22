@@ -3,6 +3,7 @@ package br.ifsc.pousada.modelos;
 import java.time.LocalDate;
 
 public class Pessoa {
+	private static Long id = 0L;
 	private String nome;
 	private LocalDate dtNascimento;
 	private String telefone;
@@ -51,5 +52,12 @@ public class Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
+    public static Long getId() {
+		return id;
+	}
+
+	public static void setId(Long id) {
+		Pessoa.id = id;
+	}
 }

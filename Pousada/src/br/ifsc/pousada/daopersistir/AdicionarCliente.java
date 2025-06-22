@@ -14,11 +14,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import br.ifsc.pousada.modelos.Cliente;
 
 public class AdicionarCliente {
-	private static final String CAMINHO_ARQUIVO = "C:\\Users\\fabio\\git\\repository\\Pousada\\clientes.json";
-	private static final ObjectMapper mapper = new ObjectMapper();
+	private static final Scanner leitura = new Scanner(System.in);
 
 	public static void adicionarCliente() {
-		Scanner leitura = new Scanner(System.in);
+
 		System.out.print("Nome: ");
 		String nome = leitura.next();
 
@@ -35,32 +34,32 @@ public class AdicionarCliente {
 
 		System.out.print("Telefone: ");
 		String telefone = leitura.next();
-
+		
 		Cliente cliente = new Cliente(nome, data, telefone, cpf, email);
 		adicionar(cliente);
 	}
 
 	public static void adicionar(Cliente cliente) {
+		String CAMINHO_ARQUIVO = "C:\\Users\\fabio\\git\\repository\\Pousada\\clientes.json";
+		ObjectMapper objeto = new ObjectMapper();
 		try {
-			mapper.registerModule(new JavaTimeModule());
+			objeto.registerModule(new JavaTimeModule());
 
-			// 1. Carrega clientes existentes
 			File arquivo = new File(CAMINHO_ARQUIVO);
-			List<Cliente> clientes;
+			List<Cliente> clientes = null;
 
 			if (arquivo.exists()) {
-				CollectionType tipoLista = mapper.getTypeFactory()
+				CollectionType tipoLista = objeto.getTypeFactory()
 					.constructCollectionType(List.class, Cliente.class);
-				clientes = mapper.readValue(arquivo, tipoLista);
+				
+				clientes = objeto.readValue(arquivo, tipoLista);
 			} else {
 				clientes = new ArrayList<>();
 			}
-
-			// 2. Adiciona novo cliente
+			
 			clientes.add(cliente);
-
-			// 3. Salva a lista atualizada
-			mapper.writerWithDefaultPrettyPrinter().writeValue(arquivo, clientes);
+			//final var json = objeto.writerWithDefaultPrettyPrinter().writeValueAsString(clientes); //transformanfo objeto em json
+			objeto.writerWithDefaultPrettyPrinter().writeValue(arquivo, clientes);
 
 			System.out.println("Cliente adicionado com sucesso!");
 

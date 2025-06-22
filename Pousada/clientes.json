@@ -1,13 +1,7 @@
 [ {
-  "nome" : "Fabio",
-  "dtNascimento" : [ 2000, 10, 16 ],
-  "telefone" : "33232313",
-  "cpf" : "70589531123",
-  "email" : "faborere"
-}, {
-  "nome" : "Fabio",
-  "dtNascimento" : [ 2000, 10, 16 ],
-  "telefone" : "42343242",
-  "cpf" : "70589531123",
-  "email" : "fifjde"
+  "nome" : "fabio",
+  "dtNascimento" : [ 2000, 12, 12 ],
+  "telefone" : "4342432432",
+  "cpf" : "23232434",
+  "email" : "fav@gmail.com"
 } ]
