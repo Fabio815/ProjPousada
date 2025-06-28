@@ -24,22 +24,33 @@ public class FazerReserva {
 			case 1:
 				carregarDadosClientes();
 				break;
+			case 2:
+				cadastrarReserva();
+				break;
 		}
 	}
 	
+	private static void cadastrarReserva() {
+		Cliente.carregarCliente("4843929392");
+		
+	}
+
 	public static void carregarDadosClientes() {
 		ObjectMapper objeto = new ObjectMapper();
 		try {
 			objeto.registerModule(new JavaTimeModule());
 			String json = LeitorJson.readJson("C:\\Users\\fabio\\git\\repository\\Pousada\\clientes.json");
 			List<Cliente> clientes = objeto.readValue(json, new TypeReference<List<Cliente>>() {});
+			int cont = 0;
 			for(Cliente c : clientes) {
+				System.err.println("Indice: [" + cont + "]");
 				System.err.println("CPF: " + c.getCpf());
 				System.err.println("Nome: " + c.getNome());
 				System.err.println("Data Nascimento: " + c.getDtNascimento());
 				System.err.println("Telefone: " + c.getTelefone());
 				System.err.println("Email: " + c.getEmail());
 				System.err.println("\n");
+				cont++;
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
