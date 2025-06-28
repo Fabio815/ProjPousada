@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.ifsc.pousada.daopersistir.AdicionarCliente;
+import br.ifsc.pousada.daopersistir.FazerReserva;
 import br.ifsc.pousada.daopersistir.ListarQuartos;
 import br.ifsc.pousada.modelos.Cliente;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -19,7 +20,7 @@ public class Main {
 		buf.append("""
 				[1] Cadastro de cliente.
 				[2] Serviço adicional.
-				[3] Listar clientes hospedado
+				[3] Listar cliente hospedado
 				[4] Listar quartos disponiveis
 				[5] Fazer reserva
 				""").append("\n");
@@ -38,6 +39,7 @@ public class Main {
 				ListarQuartos.listar();
 				break;
 			case 5:
+				FazerReserva.cadastroReserva();
 				break;
 		}
 		/*try {

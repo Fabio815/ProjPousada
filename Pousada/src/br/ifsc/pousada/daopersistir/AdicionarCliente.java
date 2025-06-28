@@ -17,7 +17,6 @@ public class AdicionarCliente {
 	private static final Scanner leitura = new Scanner(System.in);
 
 	public static void adicionarCliente() {
-
 		System.out.print("Nome: ");
 		String nome = leitura.next();
 

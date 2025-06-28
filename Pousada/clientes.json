@@ -4,4 +4,10 @@
   "telefone" : "4342432432",
   "cpf" : "23232434",
   "email" : "fav@gmail.com"
+}, {
+  "nome" : "JoãoPaulo",
+  "dtNascimento" : [ 2005, 6, 12 ],
+  "telefone" : "4738393232887",
+  "cpf" : "4843929392",
+  "email" : "joaoPaulo@gmailcom"
 } ]
