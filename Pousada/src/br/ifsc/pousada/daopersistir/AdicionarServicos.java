@@ -66,7 +66,6 @@ public class AdicionarServicos {
 						Double preco = mapTipoServico.get(tipo);
 						
 						reserva.adicionarServico(tipo, preco); // você deve ter esse método em Reserva
-						
 						System.out.println("Serviço adicionado à reserva de " + reserva.getCliente().getNome());
 						reservaEncontrada = true;
 						break;

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import br.ifsc.pousada.daopersistir.LeitorJson;
 import br.ifsc.pousada.modelos.Servico.TipoServico;
 
-public class Reserva {
+public class Reserva implements Listar {
 	private LocalDate dtEntrada;
 	private LocalDate dtSaida;
 	private Double valorTotal;
@@ -115,8 +115,9 @@ public class Reserva {
 		}
 		return reserva;
 	}
-
-	public static void listarReservas() {
+	
+	@Override
+	public void listar() {
 		ObjectMapper objeto = new ObjectMapper();
 		objeto.registerModule(new JavaTimeModule());
 		try {
@@ -136,4 +137,12 @@ public class Reserva {
 			e.printStackTrace();
 		}
 	}
+	
+	public Double calcularValorTotal(Reserva reserva) {
+		
+		return null;
+	}
 }
+
+
+

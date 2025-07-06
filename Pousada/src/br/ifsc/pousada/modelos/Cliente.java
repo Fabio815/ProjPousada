@@ -9,7 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import br.ifsc.pousada.daopersistir.LeitorJson;
 
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa implements Listar  {
 	private String email;
 	
 	public Cliente(String nome, LocalDate dtNascimento, String telefone, String cpf, String email) {
@@ -58,7 +58,8 @@ public class Cliente extends Pessoa {
 		return cliente;
 	}
 	
-	public static void carregarDadosClientes() {
+	@Override
+	public void listar() {
 		ObjectMapper objeto = new ObjectMapper();
 		try {
 			objeto.registerModule(new JavaTimeModule());

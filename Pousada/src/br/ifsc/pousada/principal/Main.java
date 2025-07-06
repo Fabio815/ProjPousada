@@ -39,17 +39,17 @@ public class Main {
 				AdicionarServicos.cadastrarServicos();
 				break;
 			case 3:
-				Cliente.carregarDadosClientes();
+				new Cliente().listar();
 				menu();
 				break;
 			case 4:
-				Quarto.listar();
+				new Quarto().listar();
 				break;
 			case 5:
 				FazerReserva.cadastroReserva();
 				break;
 			case 6:
-				Reserva.listarReservas();
+				new Reserva().listar();
 				break;
 		}
 	}
