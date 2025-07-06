@@ -1,7 +1,10 @@
 package br.ifsc.pousada.modelos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+
+import br.ifsc.pousada.modelos.Servico.TipoServico;
 
 public class Reserva {
 	private LocalDate dtEntrada;
@@ -11,6 +14,10 @@ public class Reserva {
 	private Funcionario funcionario;
 	private Quarto quarto;
 	private List<Servico> servicos;
+	
+	public Reserva() {
+		
+	}
 	
 	public LocalDate getDtEntrada() {
 		return dtEntrada;
@@ -66,4 +73,16 @@ public class Reserva {
 	public void setServicos(List<Servico> servicos) {
 		this.servicos = servicos;
 	}
+	
+	public void adicionarServico(TipoServico tipo, double valor) {
+		if (servicos == null) {
+			servicos = new ArrayList<>();
+		}
+		Servico novo = new Servico();
+		novo.setTipoServico(tipo);
+		novo.setValor(valor);
+		servicos.add(novo);
+		valorTotal += valor;
+	}
+
 }

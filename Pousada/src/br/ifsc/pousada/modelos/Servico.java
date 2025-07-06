@@ -1,14 +1,26 @@
 package br.ifsc.pousada.modelos;
 
 public class Servico {
-	private String tipoServico;
+	public enum TipoServico {
+	    LAVANDERIA,
+	    CAFE_DA_MANHA,
+	    ALMOCO,
+	    JANTAR,
+	    SALA_REUNIAO,
+	    SERVICO_DE_QUARTO
+	}
+	private TipoServico tipoServico;
 	private Double valor;
 	
-	public String getTipoServico() {
+	public Servico() {
+		
+	}
+	
+	public TipoServico getTipoServico() {
 		return tipoServico;
 	}
 	
-	public void setTipoServico(String tipoServico) {
+	public void setTipoServico(TipoServico tipoServico) {
 		this.tipoServico = tipoServico;
 	}
 	
@@ -19,6 +31,4 @@ public class Servico {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-	
-	
 }

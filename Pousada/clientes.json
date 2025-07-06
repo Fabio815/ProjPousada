@@ -10,4 +10,10 @@
   "telefone" : "4738393232887",
   "cpf" : "4843929392",
   "email" : "joaoPaulo@gmailcom"
+}, {
+  "nome" : "Pedro",
+  "dtNascimento" : [ 2005, 12, 10 ],
+  "telefone" : "123456",
+  "cpf" : "123456789",
+  "email" : "pedro@gmail.com"
 } ]
