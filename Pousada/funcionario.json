@@ -1,7 +1,9 @@
-[{
-  "nome" : "Cleber",
-  "dtNascimento" : [ 1995, 3, 12 ],
-  "telefone" : "4738393232887",
-  "cpf" : "4843929392",
-  "cargo" : "Recepcionista"
-} ]
+[
+  {
+    "nome": "Ana Souza",
+    "dtNascimento": "1990-05-15",
+    "telefone": "48999999999",
+    "cpf": "12345678900",
+    "cargo": "Recepcionista"
+  }
+]

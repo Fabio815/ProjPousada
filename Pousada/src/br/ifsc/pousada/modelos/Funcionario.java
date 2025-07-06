@@ -39,7 +39,7 @@ public class Funcionario extends Pessoa {
 			List<Funcionario> funcionario = objeto.readValue(json, tipoClasse);
 			f = funcionario.getFirst();
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			System.err.println("Erro ao listar funcionarios");
 		}
 		return f;
 	}

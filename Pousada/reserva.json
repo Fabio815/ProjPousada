@@ -1,29 +1,26 @@
 [ {
   "dtEntrada" : [ 2025, 7, 6 ],
   "dtSaida" : null,
-  "valorTotal" : 300.44,
+  "valorTotal" : 150.0,
   "cliente" : {
-    "nome" : "Pedro",
-    "dtNascimento" : [ 2005, 12, 10 ],
-    "telefone" : "123456",
+    "nome" : "Roberto",
+    "dtNascimento" : [ 1998, 12, 12 ],
+    "telefone" : "47943589212",
     "cpf" : "123456789",
-    "email" : "pedro@gmail.com"
+    "email" : "roberto@gmail.com"
   },
   "funcionario" : {
-    "nome" : "Cleber",
-    "dtNascimento" : [ 1995, 3, 12 ],
-    "telefone" : "4738393232887",
-    "cpf" : "4843929392",
+    "nome" : "Ana Souza",
+    "dtNascimento" : [ 1990, 5, 15 ],
+    "telefone" : "48999999999",
+    "cpf" : "12345678900",
     "cargo" : "Recepcionista"
   },
   "quarto" : {
-    "status" : true,
-    "tipo" : "DUPLO",
-    "numero" : 104,
-    "preco" : 260.0
+    "status" : false,
+    "tipo" : "SIMPLES",
+    "numero" : 101,
+    "preco" : 150.0
   },
-  "servicos" : [ {
-    "tipoServico" : "CAFE_DA_MANHA",
-    "valor" : 40.44
-  } ]
+  "servicos" : null
 } ]

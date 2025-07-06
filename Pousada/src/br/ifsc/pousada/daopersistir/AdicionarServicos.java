@@ -6,12 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import br.ifsc.pousada.modelos.Reserva;
 import br.ifsc.pousada.modelos.Servico.TipoServico;
+import br.ifsc.pousada.principal.Main;
 
 public class AdicionarServicos {
 	private static final Scanner leitura = new Scanner(System.in);
@@ -53,10 +54,9 @@ public class AdicionarServicos {
 			List<Reserva> listaReserva = new ArrayList<>();
 
 			if (arquivo.exists()) {
-				CollectionType tipoLista = objeto.getTypeFactory()
-					.constructCollectionType(List.class, Reserva.class);
+				String json = LeitorJson.readJson(CAMINHO_ARQUIVO);
 
-				listaReserva = objeto.readValue(arquivo, tipoLista);
+				listaReserva = objeto.readValue(json, new TypeReference<List<Reserva>>() {});
 
 				boolean reservaEncontrada = false;
 
@@ -84,6 +84,8 @@ public class AdicionarServicos {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			Main.menu();
 		}
 	}
 }

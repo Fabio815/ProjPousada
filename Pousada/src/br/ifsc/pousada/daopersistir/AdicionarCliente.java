@@ -7,11 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import br.ifsc.pousada.modelos.Cliente;
+import br.ifsc.pousada.principal.Main;
 
 public class AdicionarCliente {
 	private static final Scanner leitura = new Scanner(System.in);
@@ -46,24 +47,34 @@ public class AdicionarCliente {
 
 			File arquivo = new File(CAMINHO_ARQUIVO);
 			List<Cliente> clientes = null;
+			
+			boolean clienteCadastrado = false;
 
 			if (arquivo.exists()) {
-				CollectionType tipoLista = objeto.getTypeFactory()
-					.constructCollectionType(List.class, Cliente.class);
-				
-				clientes = objeto.readValue(arquivo, tipoLista);
+				String json = LeitorJson.readJson(CAMINHO_ARQUIVO);
+				clientes = objeto.readValue(json, new TypeReference<List<Cliente>>() {});
 			} else {
 				clientes = new ArrayList<>();
 			}
+			int tamanhoJsonOld = clientes.size();
 			
 			clientes.add(cliente);
 			//final var json = objeto.writerWithDefaultPrettyPrinter().writeValueAsString(clientes); //transformanfo objeto em json
-			objeto.writerWithDefaultPrettyPrinter().writeValue(arquivo, clientes);
+			if (clientes.size() > tamanhoJsonOld) {
+				objeto.writerWithDefaultPrettyPrinter().writeValue(arquivo, clientes);
+				System.err.println("Cliente " + cliente.getNome() +" cadastrado com sucesso!");
+			} else {
+				clienteCadastrado = true;
+			}
 
-			System.out.println("Cliente adicionado com sucesso!");
+			if (clienteCadastrado) {
+				System.err.println("Não foi possível cadastrar o cliente");
+			}
 
 		} catch (Exception e) {
 			System.err.println("Erro ao salvar cliente: " + e.getMessage());
+		} finally {
+			Main.menu();
 		}
 	}
 }

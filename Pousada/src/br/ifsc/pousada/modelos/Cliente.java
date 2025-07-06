@@ -76,8 +76,7 @@ public class Cliente extends Pessoa {
 				cont++;
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			System.err.println("Erro ao listar clientes");
 		}
 	}
-	
 }
