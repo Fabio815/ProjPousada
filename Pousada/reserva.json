@@ -1,7 +1,7 @@
 [ {
   "dtEntrada" : [ 2025, 7, 6 ],
   "dtSaida" : null,
-  "valorTotal" : 150.0,
+  "valorTotal" : 250.74,
   "cliente" : {
     "nome" : "Roberto",
     "dtNascimento" : [ 1998, 12, 12 ],
@@ -22,5 +22,11 @@
     "numero" : 101,
     "preco" : 150.0
   },
-  "servicos" : null
+  "servicos" : [ {
+    "tipoServico" : "CAFE_DA_MANHA",
+    "valor" : 40.44
+  }, {
+    "tipoServico" : "JANTAR",
+    "valor" : 60.3
+  } ]
 } ]

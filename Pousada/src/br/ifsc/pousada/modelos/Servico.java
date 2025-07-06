@@ -31,4 +31,8 @@ public class Servico {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
+	
+	public void somaServico(Double valor) {
+		
+	}
 }

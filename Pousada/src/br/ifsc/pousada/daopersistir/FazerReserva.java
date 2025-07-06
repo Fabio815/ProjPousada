@@ -30,7 +30,7 @@ public class FazerReserva {
 			int opcao = leitura.nextInt();
 			switch (opcao) {
 				case 1:
-					Cliente.carregarDadosClientes();
+					new Cliente().listar();
 					break;
 				case 2:
 					System.err.print("Número do quarto: ");
@@ -45,7 +45,7 @@ public class FazerReserva {
 					cadastrarReserva(cliente, funcionario, quarto);
 					break;
 				case 3:
-					Quarto.listar();;
+					new Quarto().listar();
 					break;
 				default: {
 					Main.menu();

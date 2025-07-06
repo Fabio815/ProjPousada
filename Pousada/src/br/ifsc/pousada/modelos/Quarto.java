@@ -9,7 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import br.ifsc.pousada.daopersistir.LeitorJson;
 
-public class Quarto {
+public class Quarto implements Listar {
 	public enum Tipo {
 		SIMPLES, DUPLO
 	};
@@ -76,7 +76,7 @@ public class Quarto {
 		return quarto;
 	}
 	
-	public static void listar() {
+	public void listar() {
 		ObjectMapper objeto = new ObjectMapper();
 		try {
 			String json = LeitorJson.readJson("C:\\Users\\fabio\\git\\repository\\Pousada\\Quartos.json");
